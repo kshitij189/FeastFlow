@@ -8,6 +8,8 @@ import resturantRoute from "./routes/restaurantRoutes.js";
 import dotenv from "dotenv";
 import categoryRoute from "./routes/categoryRoute.js";
 import foodRoute from "./routes/foodRoute.js";
+import adminRoutes from "./routes/adminRoutes.js";
+
 
 dotenv.config();
 
@@ -26,6 +28,7 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/resturant", resturantRoute);
 app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/food", foodRoute);
+app.use("/api/v1/admin", adminRoutes);
 
 app.listen(PORT, () => {
   return console.log(`server was running on PORT:-${PORT}`);
