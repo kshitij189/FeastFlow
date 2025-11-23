@@ -40,11 +40,14 @@ export const createResturantController = async (req, res) => {
       code,
       cords,
     });
-    await newRestaurant.save();
-    res.status(200).send({
-      success: true,
-      msg: "New Resturant Created Succesfully",
-    });
+    const saved = await newRestaurant.save();
+    res.status(201)
+      .location(`/api/v1/resturant/getone/${saved._id}`)
+      .send({
+        success: true,
+        msg: "New Resturant Created Succesfully",
+        restaurant: saved,
+      });
   } catch (error) {
     console.log(error);
     res.status(500).send({
