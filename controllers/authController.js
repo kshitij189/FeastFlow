@@ -7,7 +7,7 @@ const registerController = async (req, res) => {
   try {
     const { username, email,address, password,answer ,phone } = req.body;
 
-    if (!username || !password || !email ||!answer || !password) {
+    if (!username || !password || !email ||!answer || !phone) {
         return res.status(500).send({
             success:false,
             msg: "Please Fill All Feilds"
