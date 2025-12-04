@@ -10,9 +10,9 @@ async function run() {
   try {
     await connectDB();
 
-    const email = process.env.ADMIN_SEED_EMAIL || 'superadmin@example.com';
-    const password = process.env.ADMIN_SEED_PASSWORD || 'ChangeMeNow!123';
-    const username = process.env.ADMIN_SEED_USERNAME || 'superadmin';
+    const email = process.env.ADMIN_SEED_EMAIL;
+    const password = process.env.ADMIN_SEED_PASSWORD;
+    const username = process.env.ADMIN_SEED_USERNAME;
 
     const existing = await User.findOne({ email });
     if (existing) {
